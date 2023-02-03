@@ -5,7 +5,7 @@ import time
 from sentence_transformers import SentenceTransformer
 
 
-df = pd.read_csv("third_preprocessing.csv")
+df = pd.read_csv("./data/third_preprocessing.csv")
 data = df.title.to_list()
 model = SentenceTransformer('jhgan/ko-sroberta-multitask')
 encoded_data = model.encode(data)
