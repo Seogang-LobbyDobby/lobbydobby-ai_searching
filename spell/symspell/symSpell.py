@@ -1,5 +1,4 @@
 import pandas as pd
-import pkg_resources
 from symspellpy import SymSpell, Verbosity
 from hangul_utils import split_syllable_char, split_syllables, join_jamos
 
