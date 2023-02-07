@@ -1,7 +1,6 @@
 import pandas as pd
 import numpy as np
 import faiss
-import time
 from sentence_transformers import SentenceTransformer
 
 
@@ -17,7 +16,6 @@ class Model():
         # faiss.write_index(self.index, 'now_index')
 
     def search(self, query, k=100):
-        t = time.time()
         index = faiss.read_index('now_index')
         query_vector = self.model.encode([query])
         top_k = index.search(query_vector, k)
@@ -28,6 +26,5 @@ class Model():
                 result.append(now)
                 if len(result) == comparison:
                     break
-        print('Searching total-time: {}'.format(time.time() - t))
 
         return result

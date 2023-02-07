@@ -1,9 +1,16 @@
+import time
 from Models import Model
+from phanspell import Spell
 
 
+sp = Spell()
 query = str(input())
+t = time.time()
+input_query = sp.spell(query)
+print(input_query)
 base = Model()
-results = base.search(query)
+results = base.search(input_query)
+print('Searching total-time: {}'.format(time.time() - t))
 
 print('Searching results:')
 DF = base.df
