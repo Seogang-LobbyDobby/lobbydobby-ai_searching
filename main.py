@@ -1,9 +1,9 @@
 import time
-from Models import Model
-from phanspell import Spell
+from LectureSearching import Model
+from Hanspell import Sspell
 
 
-sp = Spell()
+sp = Sspell()
 query = str(input())
 t = time.time()
 input_query = sp.spell(query)
