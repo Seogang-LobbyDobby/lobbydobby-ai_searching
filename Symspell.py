@@ -11,6 +11,9 @@ class Spell():
         ssterm = split_syllables(term)
         suggestions = self.sym_spell.lookup(ssterm, Verbosity.ALL, max_edit_distance=2)
 
-        if suggestions[0].distance >= 2:
+        try:
+            if suggestions[0].distance >= 2:
+                return term
+            return join_jamos(suggestions[0].term)
+        except:
             return term
-        return join_jamos(suggestions[0].term)

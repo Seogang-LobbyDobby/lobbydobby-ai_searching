@@ -15,7 +15,7 @@ class Model():
         # self.index.add_with_ids(self.encoded_data, np.array(range(0, len(self.data))))
         # faiss.write_index(self.index, 'now_index')
 
-    def search(self, query, k=100):
+    def search(self, query, k=20):
         index = faiss.read_index('now_index')
         query_vector = self.model.encode([query])
         top_k = index.search(query_vector, k)
