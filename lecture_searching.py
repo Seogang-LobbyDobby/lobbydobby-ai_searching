@@ -4,8 +4,8 @@ from Hanspell import Spell
 
 class LectureRs():
    def lectureRs(self, query):
-      sp = Spell()
-      input_query = sp.spell(query)
+      hsp = Spell()
+      input_query = hsp.spell(query)
       base = Model()
       results = base.search(input_query)
 
