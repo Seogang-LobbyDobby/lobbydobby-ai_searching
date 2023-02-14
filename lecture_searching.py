@@ -35,6 +35,6 @@ class LectureRs():
             }
 
       RESULT = {'searchResult':[]}
-      RESULT['searchResult'].append(rs)
+      RESULT['searchResult'] = rs
       RESULT['editWord'] = input_query
       return RESULT
