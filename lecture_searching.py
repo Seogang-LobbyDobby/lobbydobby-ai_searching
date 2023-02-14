@@ -1,5 +1,5 @@
 from LectureSearching import Model
-from Symspell import Spell
+from Hanspell import Spell
 
 
 class LectureRs():
@@ -24,4 +24,5 @@ class LectureRs():
             rs[result] = [f"수강 가능 여부: {DF['condition'][idx[0]]} / 강좌 계열: {DF['kind'][idx[0]]} / URL 강좌 링크: {DF['url'][idx[0]]}"]
             rs[result].append(f"수강 가능 여부: {DF['condition'][idx[1]]} / 강좌 계열: {DF['kind'][idx[1]]} / URL 강좌 링크: {DF['url'][idx[1]]}")
 
+      rs['editWord'] = input_query
       return rs

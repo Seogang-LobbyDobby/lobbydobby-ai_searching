@@ -18,4 +18,5 @@ class Button():
             result = result[:-4]
          now.append(result)
 
-      return {'buttonSearching':now}
+      result = {'searchResult':now, 'editWord':input_query}
+      return result

@@ -17,7 +17,6 @@ def lectureRs_send(username: str = Form()):
 @app.post("/button_model/")
 def buttonSc_send(username: str = Form()):
     now_button = bsearching.button(username)
-    now_button['username'] = now_button.pop('buttonSearching')
     return now_button
 
 if __name__ == "__main__":

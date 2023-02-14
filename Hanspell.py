@@ -1,6 +1,6 @@
 from hanspell import spell_checker
 
-class Sspell():
+class Spell():
     def spell(self, input_text):
         results = spell_checker.check(input_text)
 
