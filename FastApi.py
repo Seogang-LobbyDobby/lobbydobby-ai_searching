@@ -10,12 +10,12 @@ lsearching = LectureRs()
 bsearching = Button()
 
 @app.post("/lecture_model/")
-def model_send(username: str = Form()):
+def lectureRs_send(username: str = Form()):
     now_lecture = lsearching.lectureRs(username)
     return now_lecture
 
 @app.post("/button_model/")
-def model_send(username: str = Form()):
+def buttonSc_send(username: str = Form()):
     now_button = bsearching.button(username)
     now_button['username'] = now_button.pop('buttonSearching')
     return now_button
