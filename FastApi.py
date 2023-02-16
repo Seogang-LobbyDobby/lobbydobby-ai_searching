@@ -11,7 +11,7 @@ bsearching = Button()
 
 @app.post("/lecture_model/")
 def lectureRs_send(username: str = Form()):
-    now_lecture = lsearching.lectureRs(username)
+    now_lecture = lsearching.lectureSc(username)
     return now_lecture
 
 @app.post("/button_model/")
@@ -19,5 +19,10 @@ def buttonSc_send(username: str = Form()):
     now_button = bsearching.button(username)
     return now_button
 
+@app.post("/LRS/")
+def buttonSc_send(name: str = Form(), aff: str = Form()):
+    lrs = lsearching.LRS(name, aff)
+    return lrs
+
 if __name__ == "__main__":
-    uvicorn.run(app, host='192.168.50.55', port=8000)
+    uvicorn.run()
