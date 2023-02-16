@@ -1,6 +1,5 @@
 import uvicorn
 from fastapi import FastAPI, Form
-from pydantic import BaseModel
 from button_searching import Button
 from lecture_searching import LectureRs
 
