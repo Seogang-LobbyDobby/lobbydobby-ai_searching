@@ -1,8 +1,10 @@
 from ButtonSearching import Model
 from Symspell import Spell
+from functools import cache
 
 
 class Button():
+   @cache
    def button(self, query):
       ssp = Spell()
       input_query = ssp.spell(query)
