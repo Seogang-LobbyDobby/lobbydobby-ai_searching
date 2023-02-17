@@ -1,6 +1,6 @@
 import time
 from LectureSearching import Model
-from Symspell import Spell
+from spell.SYM.Symspell import Spell
 
 
 sp = Spell()

@@ -5,7 +5,7 @@ from hangul_utils import split_syllable_char, split_syllables, join_jamos
 class Spell():
     def __init__(self):
         self.sym_spell = SymSpell(max_dictionary_edit_distance=2)
-        self.sym_spell.load_pickle("ko_symspell_50k.pickle")
+        self.sym_spell.load_pickle("./spell/SYM/ko_symspell_50k.pickle")
 
     def spell(self, term):
         ssterm = split_syllables(term)

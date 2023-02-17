@@ -6,7 +6,7 @@ from sentence_transformers import SentenceTransformer
 
 class Model():
     def __init__(self):
-        self.df = pd.read_csv("./data/third_preprocessing.csv")
+        self.df = pd.read_csv("./data/fourth_preprocessing.csv")
         self.data = self.df.title.to_list()
         self.model = SentenceTransformer('jhgan/ko-sroberta-multitask')
         # self.encoded_data = self.model.encode(self.data)
@@ -16,7 +16,7 @@ class Model():
         # faiss.write_index(self.index, 'now_index')
 
     def search(self, query, k=60):
-        index = faiss.read_index('now_index')
+        index = faiss.read_index('./lecture/now_index')
         query_vector = self.model.encode([query])
         top_k = index.search(query_vector, k)
         temp = [self.data[_id] for _id in top_k[1].tolist()[0]]
@@ -30,7 +30,7 @@ class Model():
         return result
 
     def lecturers(self, name, aff, k=3):
-        index = faiss.read_index('now_index')
+        index = faiss.read_index('./lecture/now_index')
         query_vector = self.model.encode([name + ', ' + aff])
         top_k = index.search(query_vector, k)
         temp = [self.data[_id] for _id in top_k[1].tolist()[0]]

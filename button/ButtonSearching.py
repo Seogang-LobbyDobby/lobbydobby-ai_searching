@@ -16,7 +16,7 @@ from sentence_transformers import SentenceTransformer
 
 class Model():
     def __init__(self):
-        self.df = pd.read_csv("button_data.csv")
+        self.df = pd.read_csv("./button/button_data.csv")
         self.data = self.df.button.to_list()
         self.model = SentenceTransformer('jhgan/ko-sroberta-multitask')
         # self.encoded_data = self.model.encode(self.data)
@@ -26,7 +26,7 @@ class Model():
         # faiss.write_index(self.index, 'button_index')
 
     def search(self, query, k=3):
-        index = faiss.read_index('button_index')
+        index = faiss.read_index('./button/button_index')
         query_vector = self.model.encode([query])
         top_k = index.search(query_vector, k)
 

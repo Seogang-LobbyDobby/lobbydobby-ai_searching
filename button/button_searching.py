@@ -1,5 +1,5 @@
-from ButtonSearching import Model
-from Symspell import Spell
+from button.ButtonSearching import Model
+from spell.SYM.Symspell import Spell
 from functools import cache
 
 

@@ -1,7 +1,7 @@
 import uvicorn
 from fastapi import FastAPI, Form
-from button_searching import Button
-from lecture_searching import LectureRs
+from button.button_searching import Button
+from lecture.lecture_searching import LectureRs
 
 
 app = FastAPI()

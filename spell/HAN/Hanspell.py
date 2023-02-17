@@ -9,4 +9,4 @@ class Spell():
             result += str(key) + ' '
         result = result[:-1]
 
-        return result
+        return results.words.items()

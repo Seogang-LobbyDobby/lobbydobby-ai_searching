@@ -1,13 +1,13 @@
-from LectureSearching import Model
-from Hanspell import Spell
+from lecture.LectureSearching import Model
+from spell.SYM.Symspell import Spell
 from functools import cache
 
 
 class LectureRs():
    @cache
    def lectureSc(self, query):
-      hsp = Spell()
-      input_query = hsp.spell(query)
+      ssp = Spell()
+      input_query = ssp.spell(query)
       base = Model()
       results = base.search(input_query)
 
