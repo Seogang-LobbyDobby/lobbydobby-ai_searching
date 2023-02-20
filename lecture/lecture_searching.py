@@ -3,12 +3,12 @@ from spell.SYM.Symspell import Spell
 from functools import cache
 
 
+@cache
 class LectureRs():
    def __init__(self):
       self.base = Model()
       self.ssp = Spell()
 
-   @cache
    def lectureSc(self, query):
       input_query = self.ssp.spell(query)
       results = self.base.search(input_query)
@@ -45,7 +45,6 @@ class LectureRs():
       RESULT['editWord'] = input_query
       return RESULT
 
-   @cache
    def LRS(self, name, aff):
       results = self.base.lecturers(name, aff)
 
