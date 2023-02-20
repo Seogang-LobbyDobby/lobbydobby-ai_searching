@@ -4,14 +4,16 @@ from functools import cache
 
 
 class LectureRs():
+   def __init__(self):
+      self.base = Model()
+      self.ssp = Spell()
+
    @cache
    def lectureSc(self, query):
-      ssp = Spell()
-      input_query = ssp.spell(query)
-      base = Model()
-      results = base.search(input_query)
+      input_query = self.ssp.spell(query)
+      results = self.base.search(input_query)
 
-      DF = base.df
+      DF = self.base.df
       rs = {}
       for result in results:
          idx = DF[DF['title']==result].index
@@ -45,10 +47,9 @@ class LectureRs():
 
    @cache
    def LRS(self, name, aff):
-      base = Model()
-      results = base.lecturers(name, aff)
+      results = self.base.lecturers(name, aff)
 
-      DF = base.df
+      DF = self.base.df
       rs = {}
       for result in results:
          idx = DF[DF['title']==result].index
